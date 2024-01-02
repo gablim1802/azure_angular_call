@@ -1,0 +1,36 @@
+<h1>App components works</h1>
+
+<h2>calleeID</h2>
+{{calleeIdentityText}}
+
+<br>
+
+<input type="text" [(ngModel)]="calleeAcsUserId" />
+
+
+{{calleeAcsUserId}}
+
+<div *ngIf="connectedLabel">
+  <p>Call is connected</p>
+</div>
+{{startCallDisableButton}}
+<button (click)="startCall()" [disabled]="startCallDisableButton">Start Call</button>
+{{acceptCallDisableButton}}
+<button (click)="acceptIncomingCall()" [disabled]="acceptCallDisableButton">Accept Call</button>
+{{hangUpCallDisableButton}}
+<button (click)="hangUp()" [disabled]="hangUpCallDisableButton">Hang up Call</button>
+<button (click)="startVideoCall()" [disabled]="startVideoDisableButton">Start Video</button>
+<button (click)="stopVideoCall()" [disabled]="stopVideoDisableButton">Stop Video</button>
+<button (click)="mute()" [disabled]="muteCallDisableButton">Mute</button>
+<button (click)="unmute()" [disabled]="unmuteCallDisableButton">Unmute</button>
+
+<!--<button (click)="startRecording()" [disabled]="startCallDisableButton">Recording start</button>-->
+<!--<button (click)="startRecording()" [disabled]="startCallDisableButton">Recording start</button>-->
+<div id="localVideoContainer" style="width: 30%;" hidden>Local video stream:</div>
+<div id="remoteVideoContainer" style="width: 30%;" hidden>Remote video stream:</div>
+
+<p>Original Text</p>
+{{originalText}}
+
+<p>Translated Text</p>
+{{translatedText}}
